@@ -47,7 +47,7 @@ void addNewPatients() {
 
 	if(isUrgent==0){
 	specialization_spots[specialization - 1][specialization_spots[specialization - 1][0] + 1] = isUrgent;
-	names[(specialization - 1)][specialization_spots[specialization - 1][0]] = name;
+	names[specialization - 1][specialization_spots[specialization - 1][0]] = name;
 	specialization_spots[specialization - 1][0]++;
 	}
 	else {
@@ -76,7 +76,7 @@ void printAllPatients() {
 			else
 				state = "Normal";
 
-				cout << names[5 * (s) + p - 1]<<" " << state << endl;
+				cout << names[s][p-1]<<" " << state << endl;
 
 		}
 	}
@@ -95,7 +95,7 @@ void getNextPatient() {
 		cout << "No patients at the moment have rest Dr\n";
 
 	else{
-		cout << names[(spcialization - 1) * 5] << " please go with the Dr \n";
+		cout << names[spcialization - 1] [0] << " please go with the Dr \n";
 		makeShiftingForSpotsToLeft(spcialization);
 		specialization_spots[spcialization - 1][0]--;
 	}
